@@ -1,4 +1,4 @@
-# ElementalClash
+# Elemental Clash
 
 2D Game against an AI. 
 
