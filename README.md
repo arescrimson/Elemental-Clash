@@ -6,9 +6,12 @@
 
 **About**
 
+
 This game was created using [Phaser](https://github.com/photonstorm/phaser) and written in JavaScript. 
 
+
 **Credits**
+
 
 [Sprites](https://chierit.itch.io/) 
 
