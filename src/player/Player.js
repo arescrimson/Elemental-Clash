@@ -426,7 +426,7 @@ export class AttackState extends State {
      * 
      * @param {*} player 
      */
-    enter(player) {
+    enter(scene, player) {
         player.currentAttack = 'attack';
         player.setVelocity(0);
         player.updateAttackBox(player.currentAttack, player.direction);
@@ -528,7 +528,7 @@ export class SPAttackState extends State {
  */
 export class HurtState extends State {
 
-    enter(player, enemy) {
+    enter(scene, player, enemy) {
         player.anims.play('hurt');
 
         //On hit, slows player movement based on direction they were facing when hit. 
@@ -553,12 +553,12 @@ export class HurtState extends State {
 
 export class DeathState extends State {
 
-    enter(player) {
+    enter(scene, player) {
         player.setVelocity(0);
         player.anims.play('death');
     }
 
-    execute(player) {
+    execute(scene, player) {
         player.once('animationcomplete', () => {
             player.anims.stop();
         });

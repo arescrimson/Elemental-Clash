@@ -26,9 +26,6 @@ export class Enemy extends Phaser.Physics.Arcade.Sprite {
         this.isJumping = false
         this.isDead = false
         this.isAttacking = false
-        this.moveDelay
-        this.jumpDelay
-        this.dodgeDelay
         this.checkHit
         this.budgetAeonia = false
         this.canAttack = null
@@ -168,7 +165,6 @@ export class EMainState extends State {
     enter(scene, enemy, player) {
         enemy.setVelocityX(0)
         enemy.anims.play('eidle', true);
-        enemy.moveDelay = Phaser.Math.Between(275, 300)
         enemy.scene.physics.add.overlap(enemy, player.attackBox, this.onAttackCollision, null, this)
     }
 
@@ -237,11 +233,9 @@ export class EMoveState extends State {
 
         enemy.anims.play('erun', true)
         enemy.scene.physics.add.overlap(enemy, player.attackBox, this.onAttackCollision, null, this)
-        enemy.dodgeDelay = Phaser.Math.Between(2000, 2500)
-        enemy.jumpDelay = Phaser.Math.Between(5000, 6000)
 
         if (!this.dodgeDelayCall && enemy.body.onFloor()) {
-            enemy.scene.time.delayedCall(2250, () => {
+            enemy.scene.time.delayedCall(2000, () => {
                 this.stateMachine.transition('eroll')
                 this.dodgeDelayCall = true
             })
@@ -276,13 +270,13 @@ export class EMoveState extends State {
 
         switch (enemy.direction) {
             case 'left':
-                if (enemy.body.x - 160 < player.body.x && !enemy.isRolling) {
+                if (enemy.body.x - 165 < player.body.x && !enemy.isRolling) {
                     this.stateMachine.transition(this.randomAttack)
                     return
                 }
                 break
             case 'right':
-                if (enemy.body.x + 160 > player.body.x && !enemy.isRolling) {
+                if (enemy.body.x + 165 > player.body.x && !enemy.isRolling) {
                     this.stateMachine.transition(this.randomAttack)
                     return
                 }
