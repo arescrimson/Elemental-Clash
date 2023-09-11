@@ -1,6 +1,6 @@
 # Elemental Clash
 
-2D Game against an AI. 
+2D Web Game against an AI. 
 
 [Play on Itch!](https://seralol.itch.io/elemental-clash)
 
