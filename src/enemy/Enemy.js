@@ -3,7 +3,7 @@ import { Hitbox } from '../util/Hitbox.js'
 import { StatusBar } from '../util/statusBar.js'
 import { Sword } from './Sword.js'
 
-let RUN_SPEED = 200
+let RUN_SPEED = 190
 const JUMP_SPEED = 650
 let ROLL_SPEED = 245
 
@@ -235,7 +235,7 @@ export class EMoveState extends State {
         enemy.scene.physics.add.overlap(enemy, player.attackBox, this.onAttackCollision, null, this)
 
         if (!this.dodgeDelayCall && enemy.body.onFloor()) {
-            enemy.scene.time.delayedCall(2000, () => {
+            enemy.scene.time.delayedCall(2250, () => {
                 this.stateMachine.transition('eroll')
                 this.dodgeDelayCall = true
             })
@@ -382,13 +382,13 @@ export class EAttack2State extends State {
 
         const currentFrameIndex = enemy.anims.currentFrame.index;
 
-        if (currentFrameIndex >= 2 && currentFrameIndex <= 5 && !enemy.checkHit) {
+        if (currentFrameIndex >= 2 && currentFrameIndex <= 4 && !enemy.checkHit) {
             enemy.checkHit = true
             enemy.isAttacking = true
             return
         }
 
-        if (currentFrameIndex > 5) {
+        if (currentFrameIndex > 4) {
             enemy.isAttacking = false
             return
         }
