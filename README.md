@@ -4,7 +4,7 @@
 
 ![Gameplay GIF](https://github.com/areszhang25/Elemental-Clash/blob/master/assets/utils/2023-09-11-22-26-55-Trim.gif)
 
-[Play on Itch.io](https://seralol.itch.io/elemental-clash)
+Check it out on [Itch.io](https://seralol.itch.io/elemental-clash) :D 
 
 ## About
 
