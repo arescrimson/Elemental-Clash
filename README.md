@@ -8,7 +8,7 @@ Check it out on [Itch.io](https://seralol.itch.io/elemental-clash) :D
 
 ## About
 
-Elemental Clash is a 2D web game written in JavaScript. 
+Elemental Clash is a 2D web game written in JavaScript using the Phaser.js HTML5 Framework. 
 
 ## Built With
 
